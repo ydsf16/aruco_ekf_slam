@@ -1,0 +1,23 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x1c\x00a\x00r\x00u\x00c\x00o\x00_\x00e\x00k\x00f\x00_\x00s\x00l\x00a\x00m)
+
+[CMake]
+Build Directory Count=1
+Current Build Directory Index=0
+ProjectRootRelative=
+
+[CMake][CMake Build Directory 0]
+Build Directory Path=file:///home/yds/catkin_ws/build/aruco_ekf_slam
+Build Type=Release
+CMake Binary=file:///usr/bin/cmake
+Environment Profile=
+Extra Arguments=-DCATKIN_DEVEL_PREFIX=../../devel -DCMAKE_INSTALL_PREFIX=../../install
+Install Directory=file:///home/yds/catkin_ws/install
+
+[Defines And Includes][Compiler]
+Name=GCC
+Path=gcc
+Type=GCC
+
+[MakeBuilder]
+Number Of Jobs=10

@@ -1,0 +1,3 @@
+[Project]
+Manager=KDevCMakeManager
+Name=aruco_ekf_slam

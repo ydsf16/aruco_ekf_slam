@@ -1,0 +1,11 @@
+<launch>
+
+				<node pkg="aruco_ekf_slam" type="slam_node" name="slam_node" output="screen">
+      <rosparam file="$(find aruco_ekf_slam)/settings/default.yaml" command="load" />
+    </node> 
+
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" 
+      args="-d $(find aruco_ekf_slam)/rviz/default.rviz" required="true">
+    </node>
+
+</launch>
