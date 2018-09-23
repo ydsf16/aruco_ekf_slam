@@ -1,3 +1,5 @@
+// Copyright (C) 2018 Dongsheng Yang <ydsf16@buaa.edu.cn>
+//(Biologically Inspired Mobile Robot Laboratory, Robotics Institute, Beihang University)
 
 #include <aruco_ekf_slam/aruco_ekf_slam.h>
 
