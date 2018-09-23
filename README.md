@@ -3,7 +3,7 @@
 
 算法说明请参考：https://zhuanlan.zhihu.com/p/45207081
 
-数据集下载地址：<上传中>
+数据集下载地址：https://pan.baidu.com/s/1EX9CYmdEUR2BJh7v5dTNfA
 
 依赖库：Opencv 3.1, Eigen, ROS
 
