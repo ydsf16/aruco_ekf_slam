@@ -1,5 +1,5 @@
 
-以Aruco码为路标点，实现EKF-SLAM算法。《概率机器人》第10章。
+# 以Aruco码为路标点，实现EKF-SLAM算法。《概率机器人》第10章。
 
 算法说明请参考：https://zhuanlan.zhihu.com/p/45207081
 
@@ -8,9 +8,10 @@
 
 
 
-依赖库：Opencv 3.1, Eigen, ROS
+## 依赖库
+Opencv 3.1, Eigen, ROS
 
-使用方法：
+## 使用方法
 
 STEP1. 下载到自己的 ROS 工作空间：catkin_ws/src
 
