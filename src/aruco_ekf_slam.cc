@@ -147,8 +147,8 @@ void ArUcoEKFSLAM::addImage ( const cv::Mat& img )
             Eigen::Matrix3d sigma_xi = sigma_.block(0,0, 3, 3);
             
             Eigen::Matrix<double, 2, 3> Gp;
-            Gp << 1, 1, -ob.r_ * sin(angle),
-            1, 1, ob.r_ * cos(angle);
+            Gp << 1, 0, -ob.r_ * sin(angle),
+            0, 1, ob.r_ * cos(angle);
             
             Eigen::Matrix2d Gz;
             Gz << cos(angle), -ob.r_ * sin(angle),
