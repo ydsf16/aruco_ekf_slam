@@ -1,23 +1,20 @@
 
-## 以Aruco码为路标点，实现EKF-SLAM算法。《概率机器人》第10章。
+# ArUco-based EKF-SLAM. 
 
-算法说明请参考：https://zhuanlan.zhihu.com/p/45207081
+For details, please refer to：https://zhuanlan.zhihu.com/p/45207081
 
-数据集下载地址：https://pan.baidu.com/s/1EX9CYmdEUR2BJh7v5dTNfA
+Dataset：https://pan.baidu.com/s/1EX9CYmdEUR2BJh7v5dTNfA
 
-
-
-
-## 依赖库
+## Prerequisites
 Opencv 3.1, Eigen, ROS
 
-## 使用方法
+## Demo
 
-STEP1. 下载到自己的 ROS 工作空间：catkin_ws/src
+STEP 1. Download the repository to your ROS workspace：catkin_ws/src
 
-STEP2. 编译：catkin_make
+STEP 2. Make：catkin_make
 
-STEP3. 运行 launch: roslaunch aruco_ekf_slam slam.launch
+STEP 3. Run launch: roslaunch aruco_ekf_slam slam.launch
 
-STEP4. 播放 rosbag: rosbag play aruco_slam_data_qhd1.bag -r 5
+STEP 4. Play a rosbag: rosbag play aruco_slam_data_qhd1.bag -r 5
 
