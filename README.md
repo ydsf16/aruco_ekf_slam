@@ -1,6 +1,8 @@
 
 # ArUco-based EKF-SLAM. 
 
+![image](https://github.com/ydsf16/aruco_ekf_slam/blob/master/ekf.gif)
+
 For details, please refer to：https://zhuanlan.zhihu.com/p/45207081
 
 Dataset：https://pan.baidu.com/s/1EX9CYmdEUR2BJh7v5dTNfA
