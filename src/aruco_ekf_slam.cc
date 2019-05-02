@@ -154,25 +154,42 @@ void ArUcoEKFSLAM::addImage ( const cv::Mat& img )
             Gz << cos(angle), -ob.r_ * sin(angle),
             sin(angle), -ob.r_ * cos(angle);
             
+            // 新地图点的协方差
             Eigen::Matrix2d sigma_m = Gp * sigma_xi * Gp.transpose() + Gz * Q * Gz.transpose();
-            
+
+            // 新地图点相对于已有状态的协方差
+            Eigen::MatrixXd Gfx;
+            Gfx.resize ( 2, mu_.rows() );
+            Gfx.setZero();
+            Gfx.block ( 0,0, 2, 3 ) = Gp;
+
+            Eigen::MatrixXd sigma_mx;
+            sigma_mx.resize ( 2, mu_.rows() );
+            sigma_mx.setZero();
+            sigma_mx = Gfx * sigma_;
+
             /**** 加入到地图中 ****/
             /* 扩展均值 */
             int N = mu_.rows();
-            Eigen::MatrixXd tmp_mu(N + 2, 1); tmp_mu.setZero();
+            Eigen::MatrixXd tmp_mu ( N + 2, 1 );
+            tmp_mu.setZero();
             tmp_mu << mu_ , mx, my;
-            mu_.resize(N+2, 1);
+            mu_.resize ( N+2, 1 );
             mu_ = tmp_mu;
-           
+
             /* 扩展协方差 */
-            Eigen::MatrixXd tmp_sigma( N+2, N+2); tmp_sigma.setZero();
-            tmp_sigma.block(0, 0, N, N) = sigma_;
-            tmp_sigma.block(N, N, 2, 2) = sigma_m;
-            sigma_.resize(N+2, N+2);
+            Eigen::MatrixXd tmp_sigma ( N+2, N+2 );
+            tmp_sigma.setZero();
+            tmp_sigma.block ( 0, 0, N, N ) = sigma_;
+            tmp_sigma.block ( N, N, 2, 2 ) = sigma_m;
+            tmp_sigma.block ( N, 0, 2, N ) = sigma_mx;
+            tmp_sigma.block ( 0, N, N, 2 ) = sigma_mx.transpose();
+
+            sigma_.resize ( N+2, N+2 );
             sigma_ = tmp_sigma;
-            
+
             /***** 添加id *****/
-            aruco_ids_.push_back( ob.aruco_id_ );
+            aruco_ids_.push_back ( ob.aruco_id_ );
         }// add new landmark
     }// for all observation
 }
