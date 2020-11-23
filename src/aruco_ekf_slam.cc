@@ -152,7 +152,7 @@ void ArUcoEKFSLAM::addImage ( const cv::Mat& img )
             
             Eigen::Matrix2d Gz;
             Gz << cos(angle), -ob.r_ * sin(angle),
-            sin(angle), -ob.r_ * cos(angle);
+            sin(angle), ob.r_ * cos(angle);
             
             // 新地图点的协方差
             Eigen::Matrix2d sigma_m = Gp * sigma_xi * Gp.transpose() + Gz * Q * Gz.transpose();
