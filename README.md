@@ -1,4 +1,4 @@
-# ArUco-based EKF-SLAM. 
+# ArUco-based EKF-SLAM
 
 ![image](https://github.com/ydsf16/aruco_ekf_slam/blob/master/ekf.gif)
 
@@ -19,3 +19,7 @@ STEP 3. Run launch: roslaunch aruco_ekf_slam slam.launch
 
 STEP 4. Play a rosbag: rosbag play aruco_slam_data_qhd1.bag -r 5
 
+## License
+The source code is released under GPLv3 license.
+
+For commercial inquiries, please contact wechat: YDSF16 or email: ydsf16@163.com
